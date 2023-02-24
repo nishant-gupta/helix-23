@@ -153,6 +153,7 @@ export function decorateIcons(element = document) {
  * @param {string} prefix
  */
 export async function fetchPlaceholders(prefix = 'default') {
+  console.log('loading placeholders');
   window.placeholders = window.placeholders || {};
   const loaded = window.placeholders[`${prefix}-loaded`];
   if (!loaded) {
@@ -161,6 +162,7 @@ export async function fetchPlaceholders(prefix = 'default') {
         fetch(`${prefix === 'default' ? '' : prefix}/placeholders.json`)
           .then((resp) => resp.json())
           .then((json) => {
+            console.log('placeholders', json.data);
             const placeholders = {};
             json.data.forEach((placeholder) => {
               placeholders[toCamelCase(placeholder.Key)] = placeholder.Text;
