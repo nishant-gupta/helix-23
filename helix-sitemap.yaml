@@ -1,0 +1,6 @@
+sitemaps:
+   helix-23:
+     origin: https:///main--helix-23--nishant-gupta.hlx.live
+     source: /query-index.json
+     destination: /sitemap-en.xml
+     Lastmod: YYYY-MM-DD
