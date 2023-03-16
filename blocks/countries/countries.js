@@ -7,20 +7,17 @@
  export default async function decorate(block) {
     //block.textContent = '';
   
-    // fetch nav content
+    //fetch nav content
     //const navPath = getMetadata('nav') || '/nav';
     const resp = await fetch(`/lists/countries-list.json`);
   
     if (resp.ok) {
       const json = await resp.json();
-  
-      console.log('countries', json);
-      /* change to ul, li */
+        /* change to ul, li */
         const ul = document.createElement('ul');
         json.data.forEach((row) => {
             const li = document.createElement('li');
-            li.innerHTML = row.Country + ' (' + row.Population + ')';
-            
+            li.innerHTML = row.Country + ' (' + row.Population + ')';          
             ul.append(li);
         });
         block.append(ul);
