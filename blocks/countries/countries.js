@@ -14,9 +14,9 @@ export default async function decorate(block) {
     /* change to ul, li */
     const ul = document.createElement('ul');
     json.data.forEach((row) => {
-        const li = document.createElement('li');
-        li.innerHTML = `${row.Country}  (${row.Population})`;
-        ul.append(li);
+      const li = document.createElement('li');
+      li.innerHTML = `${row.Country}  (${row.Population})`;
+      ul.append(li);
     });
     block.append(ul);
   }
